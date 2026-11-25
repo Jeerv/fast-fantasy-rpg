@@ -1,8 +1,3 @@
--- ============================================================================
--- 1. ESTRUTURA DO BANCO DE DADOS E TABELAS (CORRIGIDO PARA ff_rpg)
--- ============================================================================
-
--- Execute dentro do banco vazio criado pelo provedor.
 CREATE TABLE cosmeticos (
     id_cosmeticos INT PRIMARY KEY AUTO_INCREMENT,
     tokens INT NOT NULL DEFAULT 0,
