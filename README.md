@@ -20,9 +20,9 @@ Este repositório contém o back-end em Java (MVC + DAO + JDBC), o banco de dado
 
 ## Integrantes
 
-| Nome completo |
+| Nome completo | R.A. |
 |---|---|
-| José Valmori Krutsch Neto |
+| José Valmori Krutsch Neto | TODO |
 
 ## Tabelas do CRUD (trabalho de POO)
 
@@ -95,4 +95,11 @@ Passo a passo completo, incluindo Docker e Railway: [docs/CONFIGURACAO.md](docs/
 
 ## Transparência de IA
 
-> TODO (grupo): descrever aqui, com as próprias palavras, onde e como a IA foi usada no projeto (por exemplo: auxílio na estrutura dos DAOs, refatoração de classes, criação de telas, tratamento de exceções, revisão do script SQL). Este mesmo conteúdo deve ser dito no vídeo.
+Usei inteligência artificial (Claude, da Anthropic) como **apoio** durante o desenvolvimento. O código, o banco de dados e o front-end do projeto foram desenvolvidos por mim; a IA entrou nos pontos abaixo:
+
+- **Estrutura:** sugestões de como organizar o projeto em MVC e DAO e de como separar as responsabilidades entre as camadas.
+- **Ideias:** apoio para pensar em soluções e na modelagem do banco.
+- **Revisão:** revisão de trechos de código e do script SQL, e apoio na correção de problemas.
+- **Documentação e repositório:** apoio na organização do repositório no GitHub e na escrita do README.
+
+As decisões do projeto, a implementação e a validação do funcionamento são minhas.
