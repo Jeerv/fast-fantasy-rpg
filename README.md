@@ -95,7 +95,7 @@ Passo a passo completo, incluindo Docker e Railway: [docs/CONFIGURACAO.md](docs/
 
 ## Transparência de IA
 
-Usei inteligência artificial (Claude, da Anthropic) como **apoio** durante o desenvolvimento. O código, o banco de dados e o front-end do projeto foram desenvolvidos por mim; a IA entrou nos pontos abaixo:
+Usei inteligência artificial (Claude e Codex) como **apoio** durante o desenvolvimento. O código, o banco de dados e o front-end do projeto foram desenvolvidos por mim; a IA entrou nos pontos abaixo:
 
 - **Estrutura:** sugestões de como organizar o projeto em MVC e DAO e de como separar as responsabilidades entre as camadas.
 - **Ideias:** apoio para pensar em soluções e na modelagem do banco.
