@@ -49,6 +49,7 @@ src/
     └── schema.sql    tabelas auxiliares da API (sessão, estado do usuário, campanhas)
 db/
 └── ff_rpg-base.sql   script completo do banco MySQL (tabelas, views, triggers, permissões)
+front/             front-end web (HTML/CSS/JS + index.php), usado pela janela JavaFX e hospedável em Docker
 docs/
 └── CONFIGURACAO.md   configuração detalhada (IntelliJ, variáveis, Docker e Railway)
 pom.xml, Dockerfile, .env.example
@@ -65,7 +66,7 @@ pom.xml, Dockerfile, .env.example
 - MySQL (banco `ff_rpg`) com `mysql-connector-j` 9.4.0
 - Spring Boot 3.5.16 (API REST, `JdbcTemplate`, Spring Security Crypto/BCrypt) e Jackson
 - JavaFX 17.0.14 (janela desktop com `WebView`)
-- Front-end web em PHP servido localmente pelo XAMPP (pasta `fast_fantasy_rpg`)
+- Front-end web responsivo (HTML, CSS, JavaScript, Bootstrap 5.3.9), servido localmente pelo PHP do XAMPP (pasta `front/`)
 - Docker (Dockerfile do back-end) e Railway para hospedagem
 
 ## Como executar
@@ -79,7 +80,7 @@ Pré-requisitos: JDK 17, Maven (ou IntelliJ IDEA), MySQL e XAMPP (o PHP do XAMPP
    Antes de importar, abra `db/ff_rpg-base.sql`, procure `TROQUE_A_SENHA` (final do arquivo) e coloque senhas suas para os usuários de banco `app_ff` e `relatorio_ff`; a senha do `app_ff` é a que vai em `DB_PASSWORD`.
    O script cria tabelas, views, triggers e esses dois usuários (`app_ff` para a aplicação e `relatorio_ff` para consulta). As tabelas extras da API (sessão, estado, campanhas) são criadas sozinhas na primeira inicialização.
 2. **Variáveis de ambiente:** copie os valores de [`.env.example`](.env.example) para a configuração de execução (`DB_URL`, `DB_USER`, `DB_PASSWORD`, `PORT`, `APP_CORS_ORIGINS`). Não coloque a senha real no repositório.
-3. **Front-end:** o front PHP deve estar em `C:\xampp\htdocs\fast_fantasy_rpg` (ou aponte `FAST_FANTASY_WEB_ROOT` e `FAST_FANTASY_PHP` para outro local).
+3. **Front-end:** o front está na pasta [`front/`](front/). Copie-a para `C:\xampp\htdocs\fast_fantasy_rpg` (caminho padrão da janela) ou aponte `FAST_FANTASY_WEB_ROOT` para a pasta `front/` e `FAST_FANTASY_PHP` para o `php.exe` do XAMPP.
 4. **Executar:** abra o projeto no IntelliJ, carregue o `pom.xml` como projeto Maven (baixa JavaFX e Spring na primeira vez) e execute `View.MainView`, ou use `mvn javafx:run`. A janela sobe a API em `127.0.0.1:8081` e o front em `127.0.0.1:8090`.
 
 Passo a passo completo, incluindo Docker e Railway: [docs/CONFIGURACAO.md](docs/CONFIGURACAO.md).

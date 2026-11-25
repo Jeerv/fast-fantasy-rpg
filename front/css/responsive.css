@@ -1,0 +1,198 @@
+/* Desktop-first layout on the prototype's visual language; the original mobile flow remains below 760px. */
+@media (min-width:761px){
+  html,body{height:100%;overflow:hidden}
+  #app{display:block;width:100%;max-width:none;height:100dvh;margin:0;border:0;border-radius:0}
+  #screen{height:100%;min-height:0;margin-left:248px;display:flex;flex-direction:column;background:var(--bg)}
+  #app:not(.authenticated) #screen{margin-left:0}
+  .hdr{position:sticky;top:0;z-index:5;min-height:76px;padding:14px 34px;border-bottom:1px solid #55301a;background:rgba(42,20,9,.96);backdrop-filter:blur(10px)}
+  .hdr h1{font-size:22px;letter-spacing:.2px}
+  .hdr .sub{max-width:240px;font-size:12px}
+  .body{width:100%;max-width:1560px;margin:0 auto;padding:28px clamp(24px,3vw,52px) 46px}
+  .body.c{min-height:100%;max-width:760px;margin:0 auto;padding:40px clamp(30px,6vw,80px)}
+  .body.c .stack{max-width:460px}
+  .body.c .lead{max-width:550px}
+  .nav{position:fixed;z-index:15;left:0;top:0;bottom:0;width:248px;height:100dvh;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:7px;padding:25px 15px 102px;border-top:0;border-right:2px solid #55301a;background:linear-gradient(180deg,#211207 0%,#1a0d05 100%);box-shadow:8px 0 30px #0003}
+  .nav::before{content:'FAST FANTASY  RPG';display:block;padding:8px 10px 26px;border-bottom:1px solid #55301a;margin-bottom:16px;color:var(--yellow);font:700 15px var(--serif);letter-spacing:1px}
+  .nav::after{content:'SEU MUNDO DE AVENTURA\A Fichas e mesas salvas neste aparelho';white-space:pre-line;position:absolute;left:24px;right:18px;bottom:24px;padding-top:14px;border-top:1px solid #55301a;color:var(--muted);font-size:11px;line-height:1.6}
+  .nv{width:100%;min-width:0;min-height:48px;flex-direction:row;justify-content:flex-start;gap:13px;padding:6px 10px;border-radius:8px;text-align:left;font-size:15px}
+  .nv i{order:0;width:38px;height:36px;border-radius:7px}
+  .nv>span{order:1}
+  .nv.on{background:#6b421e;color:var(--yellow);box-shadow:inset 3px 0 var(--yellow)}
+  .nv.on i{background:#a56a2d;border-color:var(--yellow)}
+  #screen .body:not(.c){overflow-y:auto;min-height:0}
+  .hello{font-size:34px}
+  .lead{font-size:21px}
+  .h2{font-size:23px;margin:22px 0 12px}
+  .card{padding:17px;border-radius:10px}
+  .card.item{font-size:17px}
+  .btn{font-size:16px}
+  .btn.big{max-width:560px}
+  .inp{max-width:100%;padding:12px 14px}
+  .g3{gap:14px}
+  .g4{gap:12px}
+  .bf{width:min(100%,1000px);margin:0 auto}
+  .cell{min-height:48px}
+  .chatlog{height:min(42vh,430px)}
+  #modal{align-items:center;padding:30px}
+  #sheet{width:min(680px,100%);max-height:86vh;border:2px solid var(--line);border-radius:14px;padding:24px}
+  #toast{top:auto;bottom:24px}
+  .home-dashboard{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.8fr);gap:24px;align-items:stretch}
+  .home-hero{position:relative;isolation:isolate;overflow:hidden;min-height:290px;padding:38px 40px;border:2px solid var(--line);border-radius:14px;background:radial-gradient(circle at 78% 45%,#f2a03d25,transparent 31%),linear-gradient(115deg,#513017,#2b170b 68%,#3b210e);display:flex;align-items:center}
+  .home-hero::after{content:'⚔';position:absolute;z-index:-1;right:7%;top:50%;transform:translateY(-50%) rotate(-14deg);font-size:clamp(100px,14vw,190px);color:#ffd36e2e;text-shadow:0 0 38px #f2a03d24}
+  .home-hero-copy{max-width:610px}
+  .home-hero .eyebrow{color:var(--yellow);font-size:13px;letter-spacing:2px}
+  .home-hero h2{max-width:560px;margin:12px 0;font:700 clamp(34px,4vw,54px)/1.05 var(--serif);color:#fff0cf}
+  .home-hero p{max-width:500px;margin:0 0 20px;color:#e0c59b;font-size:16px;line-height:1.65}
+  .home-hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .home-hero-actions .btn{width:auto;min-width:185px}
+  .home-side-panel{display:flex;flex-direction:column;gap:13px}
+  .home-welcome{padding:20px;border:2px solid var(--line);border-radius:12px;background:#3a210f}
+  .home-welcome .muted{font-size:13px}
+  .home-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;flex:1}
+  .home-stat{min-height:98px;display:flex;flex-direction:column;justify-content:center;padding:15px 17px;border:2px solid #70451f;border-radius:10px;background:linear-gradient(145deg,#4b2b14,#35200f)}
+  .home-stat span{color:var(--muted);font-size:12px}
+  .home-stat b{font-size:27px;color:var(--yellow);margin-top:6px}
+  .home-lower{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,.9fr);gap:24px;margin-top:26px}
+  .home-section{min-width:0}
+  .home-section-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .home-section-head .h2{margin:4px 0 13px;text-align:left}
+  .home-character-list,.home-table-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .home-character-list .card.item,.home-table-list .card.item{min-height:76px;margin:0}
+  .home-table-list{grid-template-columns:1fr}
+  .home-table-list .card.item{display:block!important}
+  .character-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .character-list .card.item{min-height:78px;margin:0}
+  .tables-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .tables-list .card.item{height:100%;margin:0}
+  .table-tools{max-width:920px;margin:0 auto 18px}
+  .form-page{max-width:1050px}
+  .form-page .field-row,.form-page .form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .form-page .field-row>*:only-child,.form-page .form-row>*:only-child{grid-column:1/-1}
+}
+@media (min-width:761px) and (max-width:1100px){
+  #screen{margin-left:212px} .nav{width:212px}
+  .home-dashboard{grid-template-columns:1fr}.home-side-panel{display:grid;grid-template-columns:1fr 1fr}
+  .home-lower{grid-template-columns:1fr}
+  .character-list,.tables-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .home-hero{position:relative;overflow:hidden;padding:24px 18px 26px;border:2px solid var(--line);border-radius:10px;background:radial-gradient(circle at 90% 20%,#f2a03d20,transparent 32%),linear-gradient(135deg,#4b2a13,#261308)}
+  .home-hero h2{font:700 32px/1.06 var(--serif);color:#fff0cf;margin:10px 0}
+  .home-hero p{font:16px/1.55 var(--serif);color:var(--muted);margin:0 0 15px;max-width:400px}
+  .home-hero-actions{display:flex;gap:8px;width:100%}
+  .home-hero-actions .btn{flex:1;padding:10px 8px;font-size:14px}
+  .home-welcome{padding:12px 0 17px;text-align:center}
+  .home-welcome .hello{font-size:25px}
+  .home-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+  .home-stat{padding:10px;border:2px solid #70451f;border-radius:8px;background:#3a210f;text-align:center}
+  .home-stat span{font-size:11px;color:var(--muted)} .home-stat b{display:block;color:var(--yellow);font-size:22px;margin-top:4px}
+  .home-lower{display:grid;gap:6px;margin-top:12px}
+  .home-section-head{display:flex;align-items:center;justify-content:space-between}
+  .home-section-head .h2{text-align:left;margin:16px 0 9px}
+  .home-character-list,.home-table-list,.character-list,.tables-list{display:grid;grid-template-columns:1fr;gap:8px}
+}
+
+.attribute-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:8px 0}
+.attribute-field{display:flex;flex-direction:column;gap:5px;color:var(--muted);font-size:13px}
+.asi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:10px 0 18px}
+.asi-card{padding:12px;border:1px solid #67451f;border-radius:8px;background:#321d0e}
+.asi-card h3{margin:0 0 8px;color:var(--yellow);font-family:var(--serif)}
+.asi-card .fl{margin-top:8px}
+.asi-second[hidden]{display:none}
+@media(max-width:760px){.attribute-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.asi-grid{grid-template-columns:1fr}}
+@media (min-width:761px){
+  .table-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:25px 0 16px}
+  .table-heading .hello{font-size:31px}
+  .table-heading p{margin:6px 0 0}
+  .table-join{display:flex;align-items:flex-end;gap:12px;max-width:900px;padding:15px;border:2px solid #55301a;border-radius:10px;background:#321b0c}
+  .table-join>div{flex:1}
+  .table-join .fl{margin-top:0}
+  .table-join .btn{min-width:170px}
+  .tables-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+  .table-card{display:flex!important;flex-direction:column;align-items:stretch!important;min-height:210px;gap:0!important;text-align:left!important;padding:16px!important;background:linear-gradient(145deg,#4a2b14,#321d0f)!important}
+  .table-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .table-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:9px;background:#6b441f;color:var(--yellow);font-size:21px}
+  .table-status{padding:4px 8px;border:1px solid #477344;border-radius:20px;color:var(--green);font-size:10px;text-transform:capitalize}
+  .table-card-name{font-size:19px;font-weight:600}
+  .table-master{color:var(--muted);font-size:12px;margin-top:5px}
+  .table-meta{margin-top:auto;padding-top:13px}
+  .table-joined{color:var(--green);margin-top:10px}
+  .tables-page>.btn.big{max-width:260px}
+  .body:has(> button[aria-label="Novo personagem"]){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:12px}
+  .body:has(> button[aria-label="Novo personagem"])>.card.item{margin:0;min-height:78px}
+  .body:has(> button[aria-label="Novo personagem"])>.btn.big{grid-column:1/-1;width:220px;justify-self:start}
+  .body:has(> button[aria-label="Novo personagem"])>.btn.big.sm{grid-column:1/-1;width:auto;max-width:320px}
+  .form-page{display:block!important}
+  .form-page>.g3{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .form-page>.g3+.fl{margin-top:20px}
+  .form-page .lbl{text-align:left}
+  .game-body .card:first-child{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .game-body .bf{margin-top:10px}
+}
+@media (min-width:761px) and (max-width:1100px){
+  .tables-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .table-join{padding:12px;border:2px solid #55301a;border-radius:8px;background:#321b0c}
+  .table-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:20px 0 10px}
+  .table-heading .hello{font-size:24px}
+  .table-heading p{font-size:12px;margin:5px 0 0}
+  .table-heading>.btn{white-space:nowrap;padding:8px;font-size:12px}
+  .table-card{display:block!important;text-align:left!important}
+  .table-card-top{display:flex;justify-content:space-between;margin-bottom:8px}
+  .table-icon{margin-right:8px;color:var(--yellow)}
+  .table-status{color:var(--green);font-size:10px}
+  .table-card-name{font-weight:600}
+  .table-master{color:var(--muted);font-size:12px;margin-top:3px}
+  .table-meta{margin-top:10px}
+  .table-joined{color:var(--green);margin-top:7px}
+}
+/* Polish pass: clearer hierarchy, softer surfaces, avatar token system, and a bottom navigation dock. */
+:root{--px:'DM Sans',system-ui,sans-serif}
+button,input,select,textarea{font-family:var(--px)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #ffd36e;outline-offset:2px}
+.card{border-width:1px;box-shadow:none}
+.btn{border-width:1px;box-shadow:0 2px 0 #0003}
+.card.item{transition:border-color .16s ease,background-color .16s ease}
+.card.item:hover{border-color:#d4a853;background-color:#68401e}
+.home-hero{background:#3d2818;border-width:1px}
+.home-hero::after{color:#ffd36e1c;text-shadow:none}
+.home-stat,.home-welcome{border-width:1px;box-shadow:none}
+
+.token-avatar{display:inline-block;width:40px;height:40px;flex:none;border:2px solid var(--yellow);border-radius:50%;background-image:url('../img/fantasy_portraits_25.png');background-repeat:no-repeat;background-size:240px 200px;image-rendering:pixelated;box-shadow:0 0 0 2px #1d0f06;vertical-align:middle}
+.token-wrap{padding:0!important;border:1px solid #8f682d!important;border-radius:50%!important;overflow:hidden;background:transparent!important;box-shadow:none!important}
+.character-token{width:38px;height:38px}
+.detail-token{width:46px;height:46px}
+.account-token{width:50px;height:50px;border-width:2px}
+.token-picker{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:9px;max-width:680px;margin:8px 0 16px}
+.token-choice{position:relative;display:grid;place-items:center;min-width:50px;min-height:54px;padding:5px;border:1px solid #67451f;border-radius:8px;background:#321d0e;cursor:pointer;transition:border-color .15s,background-color .15s}
+.token-choice input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.token-choice:has(input:checked){border-color:var(--yellow);background:#62401d;box-shadow:0 0 0 2px #ffd36e28}
+.token-choice:focus-within{outline:3px solid var(--yellow);outline-offset:2px}
+.pick-token{width:40px;height:40px;border-width:1px}
+
+@media (min-width:761px){
+  #screen,#app.authenticated #screen{margin-left:0}
+  #screen .body:not(.c){padding-bottom:136px}
+  .nav{position:fixed;z-index:30;left:50%;top:auto;right:auto;bottom:18px;transform:translateX(-50%);width:min(910px,calc(100% - 48px));height:76px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:5px;padding:8px 12px;border:1px solid #8c622d;border-radius:14px;background:#24170f;box-shadow:0 8px 28px #0007}
+  .nav::before{content:'FF  RPG';display:grid;place-items:center;min-width:100px;height:48px;margin:0 8px 0 0;padding:0 12px;border:0;border-right:1px solid #654721;border-radius:0;color:var(--yellow);font:700 14px var(--serif);letter-spacing:1px}
+  .nav::after{display:none}
+  .nv{flex:1;width:auto;min-width:0;min-height:50px;flex-direction:row;justify-content:center;gap:8px;padding:6px 9px;border-radius:9px;font-size:13px}
+  .nv i{order:0;width:32px;height:32px;padding:4px;border-width:1px;border-radius:7px}
+  .nv i .nav-token{width:30px;height:30px;border:0;box-shadow:none;border-radius:5px}
+  .nv>span{order:1}
+  .nv.on{background:#57391b;color:var(--yellow);box-shadow:inset 0 -2px var(--yellow)}
+  .nv.on i{background:#775026;border-color:#9c753e}
+  .table-card{border-width:1px}
+  .form-page{max-width:1040px}
+}
+@media (min-width:761px) and (max-width:1100px){
+  .nav{width:min(760px,calc(100% - 32px));bottom:12px;height:70px}
+  .nav::before{min-width:74px;padding:0 8px;font-size:12px}
+  .nv{font-size:11px;gap:6px}
+}
+@media (max-width:760px){
+  .token-picker{grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+  .token-choice{min-width:0;min-height:50px}
+  .account-token{width:48px;height:48px}
+}

@@ -1,0 +1,19 @@
+{
+  "name": "fast-fantasy-rpg",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Clientes web e Android do Fast Fantasy RPG",
+  "scripts": {
+    "build:mobile": "node scripts/build-mobile.mjs",
+    "cap:sync": "npm run build:mobile && cap sync android",
+    "cap:add:android": "cap add android",
+    "cap:open:android": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.0.0"
+  }
+}

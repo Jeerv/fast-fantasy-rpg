@@ -1,0 +1,8 @@
+{
+  "appId": "br.com.fastfantasy.rpg",
+  "appName": "Fast Fantasy RPG",
+  "webDir": "mobile",
+  "android": {
+    "allowMixedContent": false
+  }
+}

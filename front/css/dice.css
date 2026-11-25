@@ -1,0 +1,46 @@
+/* Animação de dados */
+.dice-layer{position:absolute;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;background:rgba(12,5,1,.74);cursor:pointer;touch-action:manipulation;animation:diceFade .18s ease-out both}
+.dice-layer.out{animation:diceFadeOut .2s ease-in both}
+.dice-stage{display:flex;flex-direction:column;align-items:center;gap:14px;padding:20px;max-width:100%;pointer-events:none}
+.dice-who{font:600 20px var(--serif);color:var(--muted)}
+.dice-row{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;min-height:118px}
+.die{position:relative;width:108px;height:108px;filter:drop-shadow(0 8px 9px #000a);transition:opacity .3s,transform .3s,filter .3s}
+.die-body{width:100%;height:100%}
+.die svg{display:block;width:100%;height:100%;overflow:visible}
+.die .body{fill:#7b4a24;stroke:var(--yellow);stroke-width:3;stroke-linejoin:round}
+.die .facet{fill:none;stroke:#ffd36e88;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.die-n{position:absolute;inset:0;display:grid;place-items:center;font:700 40px var(--px);color:var(--txt);text-shadow:0 2px 0 #000a}
+.die-n.wide{font-size:30px}
+.die.rolling{animation:diceMove 1.05s cubic-bezier(.3,.7,.4,1) var(--d) both}
+.die.rolling .die-body{animation:diceSpin 1.05s cubic-bezier(.25,.6,.35,1) var(--d) both}
+.die.landed{animation:diceLand .38s ease-out both}
+.die.kept{filter:drop-shadow(0 0 14px var(--yellow)) drop-shadow(0 8px 9px #000a)}
+.die.dropped{opacity:.38;transform:scale(.82)}
+.dice-layer.crit .die.kept .body{fill:#a97b14;stroke:#fff0b8}
+.dice-layer.crit .die.kept{animation:diceLand .38s ease-out both,dicePulse .9s ease-in-out .4s 2}
+.dice-layer.fumble .die.kept .body{fill:#7d2417;stroke:#ff8f78}
+.dice-layer.fumble .die.kept{animation:diceShake .45s linear both}
+.dice-banner{min-height:92px;text-align:center;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}
+.dice-layer.landed .dice-banner{opacity:1;transform:none}
+.dice-label{font:600 20px var(--serif);color:var(--muted);margin-bottom:2px}
+.dice-line{font:700 46px/1.1 var(--serif);color:var(--yellow)}
+.dice-raw,.dice-mod{font-size:30px;color:var(--txt)}
+.dice-note{margin-top:2px;font-size:15px;color:var(--muted)}
+.dice-layer.crit .dice-note{color:var(--yellow);font-weight:700}
+.dice-layer.fumble .dice-note{color:#ff8f78;font-weight:700}
+.dice-hint{font-size:12px;color:#d3b48a88}
+@keyframes diceFade{from{opacity:0}to{opacity:1}}
+@keyframes diceFadeOut{to{opacity:0}}
+@keyframes diceMove{
+  0%{transform:translate(calc(-150px*var(--s)),-130px) scale(.5)}
+  30%{transform:translate(calc(30px*var(--s)),12px) scale(1.06)}
+  48%{transform:translate(calc(62px*var(--s)),-62px) scale(.96)}
+  66%{transform:translate(calc(-22px*var(--s)),6px) scale(1.03)}
+  82%{transform:translate(calc(12px*var(--s)),-16px) scale(.99)}
+  100%{transform:translate(0,0) scale(1)}}
+@keyframes diceSpin{from{transform:rotate(0)}to{transform:rotate(calc(720deg*var(--s)))}}
+@keyframes diceLand{0%{transform:scale(1.22)}60%{transform:scale(.95)}100%{transform:scale(1)}}
+@keyframes dicePulse{50%{transform:scale(1.14)}}
+@keyframes diceShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-9px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(4px)}}
+@media (max-width:420px){.die{width:92px;height:92px}.die-n{font-size:34px}.dice-line{font-size:40px}}
+@media (prefers-reduced-motion:reduce){.die.rolling,.die.rolling .die-body,.die.landed,.dice-layer.crit .die.kept,.dice-layer.fumble .die.kept{animation:none}}
