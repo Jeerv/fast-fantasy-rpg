@@ -20,9 +20,9 @@ Este repositório contém o back-end em Java (MVC + DAO + JDBC), o banco de dado
 
 ## Integrantes
 
-| Nome completo | R.A. |
-|---|---|
-| José Valmori Krutsch Neto | TODO |
+| Nome completo |
+|---|
+| José Valmori Krutsch Neto |
 
 ## Tabelas do CRUD (trabalho de POO)
 
