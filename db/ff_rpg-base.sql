@@ -329,10 +329,6 @@ CREATE TABLE mesa_monstro (
     FOREIGN KEY (id_mestre) REFERENCES mestre(id_mestre) ON DELETE RESTRICT
 );
 
--- ============================================================================
--- 2. ÍNDICES
--- ============================================================================
-
 CREATE INDEX idx_monstro_nome ON monstro(nome);
 CREATE INDEX idx_mesa_monstro_mesa ON mesa_monstro(id_mesa);
 CREATE INDEX idx_mesa_monstro_mestre ON mesa_monstro(id_mestre);
