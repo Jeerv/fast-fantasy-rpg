@@ -6,8 +6,17 @@ Este repositório contém o back-end em Java (MVC + DAO + JDBC), o banco de dado
 
 ## Screenshots
 
-> TODO: adicionar prints ou GIF da aplicação rodando em `docs/` e referenciar aqui, por exemplo:
-> `![Tela inicial](docs/tela-inicial.png)`
+| Tela inicial | Ficha do personagem |
+|---|---|
+| ![Tela inicial](docs/screenshots/01-tela-inicial.png) | ![Ficha do personagem](docs/screenshots/02-ficha-personagem.png) |
+
+| Mesas | Sessão (campo de batalha) |
+|---|---|
+| ![Mesas](docs/screenshots/03-mesas.png) | ![Sessão](docs/screenshots/04-sessao.png) |
+
+| Criação de personagem | Perfil |
+|---|---|
+| ![Criação de personagem](docs/screenshots/05-criacao-personagem.png) | ![Perfil](docs/screenshots/06-perfil.png) |
 
 ## Integrantes
 
