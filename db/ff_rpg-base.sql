@@ -109,7 +109,7 @@ CREATE TABLE item (
     nome VARCHAR(100) NOT NULL,
     descricao VARCHAR(255) NOT NULL,
     id_criador INT,
-    FOREIGN KEY (id_criador) REFERENCES usuario(id_usuario) ON DELETE SET NULL
+    FOREIGN KEY (id_criador) REFERENCES usuario(id_usuario) ON DELETE CASCADE
 );
 
 CREATE TABLE magia (
@@ -117,7 +117,7 @@ CREATE TABLE magia (
     nome VARCHAR(100) NOT NULL,
     descricao TEXT NOT NULL,
     id_criador INT,
-    FOREIGN KEY (id_criador) REFERENCES usuario(id_usuario) ON DELETE SET NULL
+    FOREIGN KEY (id_criador) REFERENCES usuario(id_usuario) ON DELETE CASCADE
 );
 
 CREATE TABLE classe (
@@ -178,7 +178,7 @@ CREATE TABLE talento (
     pre_requisito VARCHAR(255),
     descricao TEXT NOT NULL,
     id_criador INT,
-    FOREIGN KEY (id_criador) REFERENCES usuario(id_usuario) ON DELETE SET NULL
+    FOREIGN KEY (id_criador) REFERENCES usuario(id_usuario) ON DELETE CASCADE
 );
 
 CREATE TABLE personagem (
@@ -306,7 +306,7 @@ CREATE TABLE monstro (
         AND inteligencia BETWEEN 1 AND 30 AND sabedoria BETWEEN 1 AND 30 AND carisma BETWEEN 1 AND 30),
     CHECK (hp_maximo >= 1 AND ca >= 0 AND xp >= 0),
 
-    FOREIGN KEY (id_criador) REFERENCES usuario(id_usuario) ON DELETE SET NULL
+    FOREIGN KEY (id_criador) REFERENCES usuario(id_usuario) ON DELETE CASCADE
 );
 
 -- Tabela de instância de monstros adicionados pelo Mestre no campo de batalha da Mesa
